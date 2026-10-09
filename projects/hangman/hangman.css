@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: purple;
+    background-color: white;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 42px;
+}
+
+#Category,
+#NewGame-button {
+    font-size: 18px;
+    padding: 8px 12px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+#word-display {
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 6px;
+}
+
+#Images {
+    width: 220px;
+    height: 220px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#Images img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#guesses {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#letters {
+    margin-top: 20px;
+    max-width: 650px;
+}
+
+.letter {
+    margin: 4px;
+    padding: 10px 14px;
+    font-size: 18px;
+    border: 2px solid purple;
+    background-color: white;
+    color: purple;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.letter:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.correct {
+    border: 2px solid purple;
+    background-color: #f3e8ff;
+    color: purple;
+}
+
+.incorrect {
+    border: 2px solid red;
+    background-color: #ffe5e5;
+    color: red;
+}
+
+.hidden {
+    display: none;
+}

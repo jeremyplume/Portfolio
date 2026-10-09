@@ -1,0 +1,89 @@
+/* JEREMY PLUME PORTFOLIO - responsive CSS, organized by page section */
+
+:root { --bg: #d9d5cc; --ink: #242422; --muted: #5a5853; --line: #aaa69d; --accent: #b75d40; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body { background: var(--bg); color: var(--ink); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+a:hover { opacity: .72; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.section { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 105px 0; border-bottom: 1px solid var(--line); }
+.eyebrow, .small-heading, .project-type { color: var(--muted); font-size: .76rem; font-weight: 700; letter-spacing: .13em; }
+.section-heading { max-width: 730px; margin-bottom: 52px; }
+.section-heading h2, .contact-section h2 { margin: 10px 0 20px; font-size: clamp(2.15rem, 4.5vw, 4rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.05; }
+.section-heading > p:last-child { max-width: 610px; color: var(--muted); font-size: 1.06rem; }
+.section-heading .projects-title { font-size: clamp(2.4rem, 4vw, 3.6rem); }
+/* Flexbox navigation */
+.site-header { position: sticky; top: 0; z-index: 10; background: rgba(217, 213, 204, .97); border-bottom: 1px solid var(--line); }
+.navbar { width: min(1120px, calc(100% - 48px)); min-height: 76px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.logo { font-size: 1.55rem; font-weight: 700; white-space: nowrap; }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; flex-wrap: wrap; gap: clamp(12px, 2.5vw, 30px); }
+.nav-links a { font-size: .92rem; }
+/* Grid hero: name and photo side by side on wide screens */
+.hero { min-height: calc(100vh - 76px); display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(240px, .8fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.hero h1 { margin: 0 0 30px; font-size: clamp(3.8rem, 7.2vw, 6.6rem); font-weight: 500; letter-spacing: -.07em; line-height: .9; }
+.hero-text { max-width: 690px; color: #41403c; font-size: clamp(1.07rem, 1.7vw, 1.32rem); }
+.hero-education { max-width: 680px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+.education-program { margin-top: 7px; font-size: 1.14rem; font-weight: 700; }
+.education-school { color: var(--muted); }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.button { display: inline-block; padding: 12px 20px; border: 1px solid var(--ink); transition: transform .2s ease; }
+.button:hover { transform: translateY(-2px); opacity: 1; }
+.button-primary { background: var(--ink); color: var(--bg); }
+.hero-card { width: 100%; }
+/* Responsive image: no stretched face; portrait crop */
+.profile-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center center; border-radius: 2px; }
+/* Skills are displayed as individual outlined tags */
+.skills-heading { max-width: 900px; margin-bottom: 32px; }
+.skills-heading h2 { max-width: 900px; font-size: clamp(1.8rem, 3.2vw, 2.8rem); line-height: 1.15; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 14px; list-style: none; max-width: 950px; }
+.skill-tags li { padding: 8px 14px; border: 1px solid var(--muted); border-radius: 7px; color: #45433f; font-size: 1rem; background: rgba(255, 255, 255, .12); }
+
+/* Project cards use a two-column CSS grid */
+.project-list { border-top: 1px solid var(--ink); }
+.project-card { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 52px; padding: 54px 0; border-bottom: 1px solid var(--line); }
+.project-image { min-height: 340px; display: grid; place-items: center; padding: 22px; text-align: center; }
+.project-image > span { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; font-weight: 700; letter-spacing: -.055em; }
+.visual-subtitle { display: block; margin-top: 18px; font-size: .77rem; font-weight: 500; letter-spacing: .16em; }
+.placeholder-one { background: #282a29; color: #f4f1eb; }
+.placeholder-two { background: #ae644c; color: #fff9f0; }
+.placeholder-three { background: #b7b1a6; color: #282723; }
+.project-info { align-self: center; }
+.project-info h3 { margin: 8px 0 17px; font-size: clamp(1.9rem, 3vw, 2.7rem); font-weight: 500; line-height: 1.08; }
+.project-info > p:not(.project-type):not(.technology) { color: #45433f; }
+.role { margin-top: 15px; }
+.technology { margin-top: 20px; font-size: .82rem; font-weight: 700; letter-spacing: .04em; }
+.project-links, .source-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 24px; }
+.project-links a, .source-links a { border-bottom: 1px solid var(--ink); padding-bottom: 3px; }
+.project-note { color: var(--muted); font-size: .91rem; margin-top: 25px; }
+/* Contact and footer */
+.contact-section { padding-bottom: 125px; }
+.contact-section h2 { font-size: clamp(2.2rem, 4vw, 3.8rem); }
+.contact-intro { max-width: 600px; margin: 24px 0 35px; color: var(--muted); font-size: 1.15rem; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 14px 30px; }
+.contact-links a { font-size: 1.05rem; border-bottom: 1px solid var(--ink); overflow-wrap: anywhere; }
+footer { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 35px 0 55px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .85rem; }
+/* C# source code viewer */
+.code-page h1 { font-size: clamp(3rem, 7vw, 5rem); font-weight: 500; letter-spacing: -.05em; }
+.code-description { max-width: 760px; margin-top: 16px; }
+.code-block { margin-top: 32px; padding: 25px; background: #272827; color: #f2eee6; border-radius: 4px; overflow-x: auto; font-size: .84rem; line-height: 1.55; tab-size: 4; }
+/* Media queries: tablet widths */
+@media (max-width: 850px) {
+  .hero { min-height: auto; grid-template-columns: 1fr; gap: 40px; }
+  .hero-card { max-width: 400px; }
+  .project-card { grid-template-columns: 1fr; gap: 28px; }
+}
+/* Media queries: phone widths */
+@media (max-width: 600px) {
+  .section, .navbar, footer { width: calc(100% - 32px); }
+  .section { padding: 75px 0; }
+  .navbar { min-height: 68px; }
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: .8rem; }
+  .nav-links a:first-child { display: none; }
+  .hero h1 { font-size: clamp(3.5rem, 15vw, 5.2rem); }
+  .project-image { min-height: 245px; }
+  .contact-links { flex-direction: column; align-items: flex-start; }
+  footer { flex-direction: column; }
+}
